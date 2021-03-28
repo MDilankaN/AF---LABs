@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AF - Lab 2</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    //         function setvalue(callback) {
+    //             let value = 0;
+    //             setTimeout(function () {
+    //                 value = 10;
+    //                 callback(value);
+    //             }, 1000);
+    //         }
+    //
+    //         // --Note----------javascript is async so we use anonymous functions to get values. so
+    //         // we pass the value as anonymous function parameter--------------------
+    //
+    //         // setvalue(function (value){
+    //         //     console.log(value);
+    //         // });
+    // /////////////////////////////////////////////////////////////////
+    //         function setNewValue(value ,callback) {
+    //             setTimeout(function () {
+    //                 callback(value * 100);
+    //             }, 1000);
+    //         }
+    //
+    //         setvalue(function (value){
+    //             console.log(value);
+    //             setNewValue(value , function (newValue){
+    //                 console.log(newValue);
+    //             });
+    //         });
+
+    ///// promise object
+
+    let promise = new Promise(function (resolve, reject){
+        resolve();
+        reject();
+    });
+
+    function getvalue() {
+        let value = 0;
+        //resolve is for success scenario
+        //reject is for error scenario
+        return promise(function (resolve, reject) {
+            setTimeout(function () {
+                value = 10;
+                resolve(value);
+            }, 1000);
+
+        });
+    }
+
+    // calling the function
+    getvalue().then(function (value) {
+        console.log(value);
+    })
+
+
+
+
+
+</script>
+</body>
+</html>
